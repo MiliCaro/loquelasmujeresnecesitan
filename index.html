@@ -235,8 +235,8 @@
   }
   .hc-pct { font-size: 13px; font-weight: 700; color: var(--orange); }
 
-  .hero-right { position: relative; align-self: end; max-width: 760px; margin-left: auto; width: 100%; min-width: 0; }
-  .hero-right img { width: 100%; max-width: 100%; height: auto; display: block; object-fit: contain; }
+  .hero-right { position: relative; align-self: stretch; margin-left: auto; width: 100%; min-width: 0; overflow: hidden; }
+  .hero-right img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
   .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 22%); pointer-events: none; }
 
   /* ── ABOUT SECTION ── */
@@ -635,7 +635,8 @@
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; }
-    .hero-right { max-width: 520px; margin: 0 auto; align-self: center; }
+    .hero-right { max-width: 100%; margin: 0 auto; align-self: stretch; height: 60vh; }
+    .hero-right img { height: 100%; }
     .hero-left { padding: 52px 28px 32px; }
     .about-section, .cinco-section, .disenado-section, .process-section,
     .testimonios-section, .red-section, .sponsors-section,
