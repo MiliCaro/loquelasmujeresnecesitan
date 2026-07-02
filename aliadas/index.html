@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toolkit para Organizaciones Aliadas · Lo que las Mujeres Necesitan</title>
+
+<meta name="description" content="Material para organizaciones aliadas: textos listos para copiar, checklist de difusión y formulario para registrar tu organización y subir tu logo.">
+<meta name="theme-color" content="#1B2B4B">
+<link rel="canonical" href="https://loquelasmujeresnecesitan.org/aliadas/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E05A2B'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Lo que las Mujeres Necesitan · WGH Argentina">
+<meta property="og:title" content="Toolkit para Organizaciones Aliadas — Consulta Nacional 2026">
+<meta property="og:description" content="Sumá tu organización a la Consulta Nacional. Textos, checklist y registro con logo.">
+<meta property="og:url" content="https://loquelasmujeresnecesitan.org/aliadas/">
+<meta property="og:image" content="https://loquelasmujeresnecesitan.org/OG-Card-Final.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:    #F2EDE4;
+    --cream-mid:#EAE3D8;
+    --orange:   #E05A2B;
+    --orange-dark: #C44D22;
+    --orange-light: #F4896A;
+    --navy:     #1B2B4B;
+    --navy-mid: #2C3E6B;
+    --text-mid:  #4A5568;
+    --gl:       #F7F4F0;
+    --error:    #C0415A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--cream); color: var(--navy); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 68px;
+    background: rgba(242,237,228,0.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(27,43,75,0.08);
+  }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--navy); text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--orange); }
+  .nav-back .arrow { transition: transform 0.2s; }
+  .nav-back:hover .arrow { transform: translateX(-3px); }
+  .nav-cta {
+    background: var(--orange); color: white; text-decoration: none;
+    padding: 12px 24px; border-radius: 100px; font-weight: 700; font-size: 14px;
+    transition: all 0.22s; box-shadow: 0 4px 16px rgba(224,90,43,0.3);
+  }
+  .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 68px 40px 56px; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; right:-100px; top:-100px; width:420px; height:420px; border-radius:50%; background:rgba(255,255,255,0.06); pointer-events:none; }
+  .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+  .hero-tag {
+    display:inline-block; border:1px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.85);
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; padding:6px 15px;
+    border-radius:30px; margin-bottom:22px; font-weight:600;
+  }
+  .hero h1 {
+    font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(30px,4.4vw,52px);
+    color:white; line-height:1.06; letter-spacing:-0.02em; margin-bottom:18px;
+  }
+  .hero h1 em { font-style:italic; color: var(--orange-light); }
+  .hero-sub { font-size:17px; color:rgba(255,255,255,0.85); font-weight:300; max-width:600px; line-height:1.7; margin-bottom:34px; }
+  .link-box { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:12px; padding:18px 24px; display:inline-block; }
+  .link-lbl { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:5px; font-weight:600; }
+  .link-url { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:white; font-weight:700; }
+  .link-url em { background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; font-style:normal; font-size:14px; }
+  .link-note { font-size:12px; color:rgba(255,255,255,0.5); margin-top:6px; }
+
+  /* STATS */
+  .stats { background: var(--navy-mid); display:flex; }
+  .stat { flex:1; padding:22px 8px; text-align:center; border-right:1px solid rgba(242,237,228,0.09); }
+  .stat:last-child { border-right:none; }
+  .stat-n { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(20px,2.6vw,28px); color:var(--orange-light); line-height:1; margin-bottom:4px; }
+  .stat-l { font-size:11px; color:rgba(242,237,228,0.6); }
+
+  /* NAV PILLS */
+  .nav-pills { display:flex; gap:8px; padding:24px 40px 0; flex-wrap:wrap; max-width:900px; margin:0 auto; justify-content:center; }
+  .pill { background:white; border:1px solid var(--cream-mid); color:var(--navy); font-size:12px; font-weight:600; padding:8px 16px; border-radius:30px; cursor:pointer; text-decoration:none; transition:all .2s; }
+  .pill:hover { background:var(--orange); border-color:var(--orange); color:white; }
+
+  /* MAIN */
+  .main { max-width:820px; margin:0 auto; padding:44px 24px 72px; }
+  .s-head { display:flex; align-items:center; gap:14px; margin-bottom:22px; margin-top:56px; }
+  .s-head:first-child { margin-top: 8px; }
+  .s-num { width:34px; height:34px; background:var(--orange); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .s-head h2 { font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(22px,2.6vw,28px); letter-spacing:-0.01em; }
+  .s-body p { font-size:15px; color:var(--text-mid); line-height:1.75; margin-bottom:14px; }
+  .s-body p strong { color: var(--navy); font-weight: 600; }
+
+  /* Cards */
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:22px 0; }
+  .card { background:white; border:1px solid var(--cream-mid); border-radius:14px; padding:22px 20px; }
+  .card-i { font-size:24px; margin-bottom:11px; }
+  .card-t { font-weight:700; font-size:14px; margin-bottom:6px; }
+  .card-b { font-size:12.5px; color:var(--text-mid); line-height:1.6; }
+
+  /* Canal / copy boxes */
+  .canal { margin-bottom:24px; }
+  .copy-box { background:white; border:1px solid var(--cream-mid); border-left:4px solid var(--orange); border-radius:0 12px 12px 0; overflow:hidden; }
+  .copy-hdr { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 18px; background:var(--gl); border-bottom:1px solid var(--cream-mid); }
+  .copy-lbl { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); }
+  .copy-btn { background:none; border:1px solid var(--orange); color:var(--orange); font-size:12px; font-weight:700; padding:5px 14px; border-radius:20px; cursor:pointer; font-family:inherit; transition:all .2s; flex-shrink:0; }
+  .copy-btn:hover { background:var(--orange); color:white; }
+  .copy-body { padding:18px; font-size:14px; line-height:1.75; color:var(--navy); white-space:pre-wrap; }
+
+  /* Hashtags */
+  .ht-row { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+  .ht { background:var(--navy); color:var(--cream); font-size:13px; font-weight:600; padding:6px 15px; border-radius:30px; }
+
+  /* Checklist */
+  .ck { list-style:none; display:flex; flex-direction:column; gap:11px; margin:16px 0; }
+  .ck li { display:flex; align-items:flex-start; gap:11px; font-size:14.5px; color:var(--text-mid); line-height:1.6; }
+  .ck li::before { content:'✓'; color:var(--orange); font-weight:700; font-size:14px; flex-shrink:0; margin-top:2px; }
+
+  /* Highlight */
+  .hl { background:var(--navy); border-radius:14px; padding:26px 30px; margin:22px 0; }
+  .hl-lbl { font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange-light); font-weight:700; margin-bottom:10px; }
+  .hl p { color:rgba(242,237,228,0.82); font-size:14.5px; line-height:1.75; }
+  .hl strong { color:var(--cream); font-weight:600; }
+
+  .divider { border:none; border-top:1px solid var(--cream-mid); margin:44px 0; }
+
+  /* FORM */
+  .form-section { background:white; border-radius:18px; border:1px solid var(--cream-mid); overflow:hidden; margin-top:22px; box-shadow:0 6px 30px rgba(27,43,75,0.08); }
+  .form-hero { background:var(--navy); padding:34px 38px; }
+  .form-hero h3 { font-family:'Playfair Display',serif; font-weight:900; font-size:26px; color:var(--cream); margin-bottom:8px; }
+  .form-hero p { font-size:14px; color:rgba(242,237,228,0.68); font-weight:300; line-height:1.6; }
+  .form-body { padding:38px; }
+  .fsec-lbl { font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); padding-bottom:11px; border-bottom:1px solid var(--cream-mid); margin-bottom:22px; }
+  .fg { margin-bottom:18px; }
+  .fr { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+  label { display:block; font-size:12.5px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+  label .req { color:var(--orange); }
+  label .opt { color:var(--text-mid); font-weight:400; font-size:11px; }
+  input[type=text], input[type=email], input[type=url], select, textarea {
+    width:100%; padding:11px 14px; border:1.5px solid var(--cream-mid); border-radius:8px;
+    font-family:inherit; font-size:14px; color:var(--navy); background:white;
+    transition:border-color .2s, box-shadow .2s; outline:none;
+  }
+  input:focus, select:focus, textarea:focus { border-color:var(--orange); box-shadow:0 0 0 3px rgba(224,90,43,0.1); }
+  select { cursor:pointer; }
+  textarea { resize:vertical; min-height:84px; }
+
+  /* Upload */
+  .upload-area { border:2px dashed var(--cream-mid); border-radius:12px; padding:30px 20px; text-align:center; cursor:pointer; transition:all .2s; background:var(--cream); position:relative; }
+  .upload-area:hover, .upload-area.dragover { border-color:var(--orange); background:#fdf8f5; }
+  .upload-area input[type=file] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+  .upload-icon { font-size:28px; margin-bottom:8px; }
+  .upload-t { font-size:13.5px; font-weight:600; color:var(--navy); margin-bottom:4px; }
+  .upload-s { font-size:11.5px; color:var(--text-mid); }
+  .upload-s span { color:var(--orange); font-weight:600; }
+  #prev-wrap { display:none; margin-top:16px; }
+  #prev-wrap img { max-height:76px; max-width:190px; object-fit:contain; border:1px solid var(--cream-mid); border-radius:6px; padding:8px; background:white; }
+  #prev-name { font-size:11.5px; color:var(--text-mid); margin-top:6px; }
+  #rm-logo { background:none; border:none; color:var(--orange); font-size:11.5px; cursor:pointer; margin-top:4px; text-decoration:underline; font-family:inherit; }
+
+  /* Checks */
+  .cg { display:flex; flex-direction:column; gap:11px; }
+  .ci { display:flex; align-items:flex-start; gap:11px; cursor:pointer; }
+  .ci input[type=checkbox] { width:18px; height:18px; flex-shrink:0; margin-top:2px; accent-color:var(--orange); cursor:pointer; }
+  .ci-lbl { font-size:13.5px; color:var(--navy); line-height:1.5; }
+  .ci-lbl strong { font-weight:600; }
+  .fdiv { border:none; border-top:1px solid var(--cream-mid); margin:26px 0; }
+
+  /* Submit */
+  .sub-wrap { margin-top:26px; text-align:center; }
+  .btn-sub { background:var(--orange); color:white; border:none; padding:16px 0; border-radius:100px; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer; transition:all .22s; width:100%; max-width:340px; box-shadow:0 8px 24px rgba(224,90,43,0.35); }
+  .btn-sub:hover { background:var(--orange-dark); transform:translateY(-2px); }
+  .btn-sub:disabled { background:#ccc; cursor:not-allowed; transform:none; box-shadow:none; }
+  .sub-note { font-size:11.5px; color:var(--text-mid); margin-top:12px; line-height:1.6; }
+
+  .ferr { font-size:11.5px; color:var(--error); margin-top:4px; display:none; }
+  .invalid { border-color:var(--error) !important; }
+
+  /* Success */
+  .success-scr { display:none; text-align:center; padding:52px 38px; }
+  .success-icon { font-size:52px; margin-bottom:16px; }
+  .success-scr h3 { font-family:'Playfair Display',serif; font-size:28px; color:var(--navy); margin-bottom:12px; }
+  .success-scr p { font-size:15px; color:var(--text-mid); line-height:1.7; max-width:440px; margin:0 auto; }
+  .success-scr p strong { color: var(--navy); }
+  .success-box { margin-top:26px; padding:20px; background:var(--cream); border-radius:12px; display:inline-block; }
+  .success-box .su { font-size:15px; color:var(--orange); font-weight:700; }
+
+  footer {
+    background:var(--navy); padding:30px 40px; text-align:center;
+  }
+  footer p { font-size:12.5px; color:rgba(242,237,228,0.45); }
+  footer span { color:var(--orange-light); }
+  footer a { color:rgba(242,237,228,0.7); text-decoration:none; }
+  footer a:hover { color:white; }
+
+  @media (max-width:600px) {
+    nav { padding:0 18px; }
+    .nav-back span.txt { display:none; }
+    .hero { padding:44px 22px 40px; }
+    .stats { overflow-x:auto; }
+    .nav-pills { padding:18px 20px 0; }
+    .main { padding:32px 18px 56px; }
+    .form-body { padding:26px 20px; }
+    .form-hero { padding:26px 22px; }
+    .fr { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="/"><span class="arrow">←</span><span class="txt">Volver a la consulta</span></a>
+  <a class="nav-cta" href="https://es.surveymonkey.com/r/JTRNWKQ" target="_blank" rel="noopener">Respondé ahora</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Material exclusivo para organizaciones aliadas</div>
+    <h1>Todo lo que necesitás para <em>amplificar</em> la consulta en tu comunidad</h1>
+    <p class="hero-sub">Textos listos para copiar, checklist de difusión y el formulario para registrar a tu organización y subir tu logo — todo en un solo lugar.</p>
+    <div class="link-box">
+      <div class="link-lbl">Tu link único de difusión</div>
+      <div class="link-url">surveymonkey.com/r/<em>TU-CÓDIGO</em></div>
+      <div class="link-note">Usá siempre este link — no el link general de la campaña</div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">3 min</div><div class="stat-l">Dura la consulta</div></div>
+  <div class="stat"><div class="stat-n">20.000</div><div class="stat-l">Respuestas buscadas</div></div>
+  <div class="stat"><div class="stat-n">24</div><div class="stat-l">Provincias</div></div>
+  <div class="stat"><div class="stat-n">Nov. 2026</div><div class="stat-l">Presentación oficial</div></div>
+</div>
+
+<nav class="nav-pills">
+  <a class="pill" href="#s1">Qué es</a>
+  <a class="pill" href="#s2">Tu link</a>
+  <a class="pill" href="#s3">Textos</a>
+  <a class="pill" href="#s4">Hashtags</a>
+  <a class="pill" href="#s5">Checklist</a>
+  <a class="pill" href="#s6">Beneficios</a>
+  <a class="pill" href="#s-form">Registrate</a>
+</nav>
+
+<main class="main">
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="s-head"><div class="s-num">1</div><h2>Qué es esta consulta y por qué importa</h2></div>
+    <div class="s-body">
+      <p><strong>Lo que las Mujeres Necesitan</strong> es la primera consulta nacional abierta y federal sobre salud de las mujeres en Argentina. No es una encuesta de opinión: es una herramienta para construir evidencia real que llegue a quienes toman decisiones.</p>
+      <p>Los resultados se presentarán formalmente ante el Ministerio de Salud, el Congreso y organismos internacionales como UNFPA y OPS en noviembre de 2026.</p>
+      <div class="cards">
+        <div class="card"><div class="card-i">💬</div><div class="card-t">Voz directa</div><div class="card-b">Las mujeres cuentan en sus propias palabras qué necesitan y qué les falla.</div></div>
+        <div class="card"><div class="card-i">📊</div><div class="card-t">Evidencia rigurosa</div><div class="card-b">Datos cuantitativos y cualitativos para incidir en políticas públicas.</div></div>
+        <div class="card"><div class="card-i">🗺️</div><div class="card-t">Alcance federal</div><div class="card-b">Necesitamos voces de las 24 provincias y de todas las realidades.</div></div>
+        <div class="card"><div class="card-i">🎯</div><div class="card-t">Impacto real</div><div class="card-b">Los datos van al Ministerio, al Congreso y a organismos internacionales.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="s-head"><div class="s-num">2</div><h2>Tu link único y cómo funciona</h2></div>
+    <div class="s-body">
+      <p>Cada organización aliada tiene su propia URL de SurveyMonkey. Así podemos saber cuántas respuestas generó tu comunidad y darte un reporte personalizado.</p>
+      <div class="hl">
+        <div class="hl-lbl">Tu link de difusión</div>
+        <p><strong>https://es.surveymonkey.com/r/[TU-CÓDIGO]</strong><br><br>
+        Este es el único link que tenés que compartir en todos tus canales. Cada respuesta queda asociada a la organización.<br><br>
+        <strong>No compartas el link general de la campaña.</strong> Usá siempre el link específico de tu organización.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="s-head"><div class="s-num">3</div><h2>Textos listos para copiar</h2></div>
+    <div class="s-body">
+      <p>Elegí el canal, copiá el texto, pegá tu link único donde dice <strong>[TU LINK]</strong> y enviá.</p>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">WhatsApp · versión compromiso</span><button class="copy-btn" type="button" onclick="cp(this,'t1')">Copiar</button></div>
+          <div class="copy-body" id="t1">💚 Hola a todas,
+
+Les comparto algo en lo que estamos trabajando desde [Nombre de tu organización] y necesitamos que llegue lejos.
+
+Acompañamos la Consulta Nacional "Lo que las Mujeres Necesitan", impulsada por Women in Global Health Argentina: una iniciativa para escuchar directamente a mujeres de todo el país sobre sus necesidades y barreras en salud. Los datos van a ser usados para influir en políticas públicas reales.
+
+✅ Dura 3 minutos
+✅ Es anónima
+✅ Cada respuesta suma
+
+👉 [TU LINK]
+
+Si pueden compartirla en sus grupos, organizaciones, con sus pacientes, alumnas o colegas, sería enorme. Necesitamos voces de todas las provincias.
+
+Porque cuando las mujeres son escuchadas, los sistemas cambian. 💛</div>
+        </div>
+      </div>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">WhatsApp · versión rápida</span><button class="copy-btn" type="button" onclick="cp(this,'t2')">Copiar</button></div>
+          <div class="copy-body" id="t2">¡Hola! Te mando algo que vale 3 minutos de tu tiempo 💚
+
+Desde [Nombre de tu organización] acompañamos una consulta nacional sobre lo que las mujeres necesitan en salud. Los datos van directo a políticas públicas.
+
+Respondé, compartí, hacela llegar a otras mujeres. ¡Gracias! 🙌
+
+👉 [TU LINK]</div>
+        </div>
+      </div>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">Email / Newsletter</span><button class="copy-btn" type="button" onclick="cp(this,'t3')">Copiar</button></div>
+          <div class="copy-body" id="t3">ASUNTO: Te pedimos 3 minutos para algo importante
+
+Desde [Nombre de tu organización] acompañamos la Consulta Nacional "Lo que las Mujeres Necesitan", una iniciativa de Women in Global Health Argentina para construir evidencia real sobre lo que las mujeres necesitan en salud.
+
+Los datos se presentarán ante el Ministerio de Salud, el Congreso y organismos internacionales para incidir en políticas públicas.
+
+Te pedimos que:
+✅ Respondas la consulta (dura 3 minutos, es anónima)
+✅ La compartas con otras mujeres de tu red
+
+Respondé acá: [TU LINK]
+
+Gracias por ser parte.
+[Firma de tu organización]</div>
+        </div>
+      </div>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">Instagram · caption para post o story</span><button class="copy-btn" type="button" onclick="cp(this,'t4')">Copiar</button></div>
+          <div class="copy-body" id="t4">🌎 Desde [Nombre de tu organización] acompañamos la Consulta Nacional "Lo que las Mujeres Necesitan".
+
+Una iniciativa para escuchar directamente a las mujeres argentinas sobre sus necesidades en salud — y construir evidencia que cambie políticas reales.
+
+Dura 3 minutos. Es anónima. Tu voz importa.
+
+👉 Link en bio / [TU LINK]
+
+#LoQueLasMujeresNecesitan #WGHArgentina #SaludDeMujeres</div>
+        </div>
+      </div>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">LinkedIn · post profesional</span><button class="copy-btn" type="button" onclick="cp(this,'t5')">Copiar</button></div>
+          <div class="copy-body" id="t5">Desde [Nombre de tu organización] sumamos nuestro apoyo a la Consulta Nacional "Lo que las Mujeres Necesitan", impulsada por Women in Global Health Argentina.
+
+Esta iniciativa busca construir el primer mapa de evidencia nacional sobre las necesidades y barreras de las mujeres en el sistema de salud argentino. Los datos se presentarán ante el Ministerio de Salud, el Congreso y organismos como UNFPA y OPS.
+
+Invitamos a nuestra comunidad a responderla y compartirla.
+
+👉 [TU LINK]
+
+3 minutos · Anónima · Federal · Para todas las provincias.
+
+#LoQueLasMujeresNecesitan #WGHArgentina #SaludFemenina #PoliticasPublicas</div>
+        </div>
+      </div>
+
+      <div class="canal">
+        <div class="copy-box">
+          <div class="copy-hdr"><span class="copy-lbl">Cartelería presencial / QR</span><button class="copy-btn" type="button" onclick="cp(this,'t6')">Copiar</button></div>
+          <div class="copy-body" id="t6">¿Qué necesitás para cuidar tu salud?
+
+Respondé la Consulta Nacional en 3 minutos.
+Tu respuesta puede cambiar políticas de salud.
+
+Escaneá el código QR o ingresá a:
+[TU LINK]
+
+Iniciativa de Women in Global Health Argentina
+Acompañada por [Nombre de tu organización]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="s-head"><div class="s-num">4</div><h2>Hashtags oficiales</h2></div>
+    <div class="s-body">
+      <p>Usá siempre el hashtag principal. Los secundarios son opcionales según el canal.</p>
+      <div class="ht-row">
+        <div class="ht">#LoQueLasMujeresNecesitan</div>
+        <div class="ht">#WGHArgentina</div>
+        <div class="ht">#SaludDeMujeres</div>
+        <div class="ht">#ConsultaNacional</div>
+        <div class="ht">#PoliticasPublicas</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="s-head"><div class="s-num">5</div><h2>Checklist de difusión</h2></div>
+    <div class="s-body">
+      <p>Para maximizar el impacto, sugerimos completar estos pasos en las próximas 2 semanas:</p>
+      <ul class="ck">
+        <li>Alguien del equipo responde la consulta antes de difundirla.</li>
+        <li>Enviar el mensaje de WhatsApp a los grupos principales de la organización.</li>
+        <li>Publicar en las redes de la organización (Instagram, LinkedIn, Facebook).</li>
+        <li>Enviar un mail o newsletter a la base de contactos.</li>
+        <li>Imprimir o proyectar el QR en espacios físicos (sala de espera, recepción, aula, consultorio).</li>
+        <li>Pedir al equipo que comparta también desde sus cuentas personales.</li>
+        <li>Volver a publicar en redes a los 7 días — el recordatorio duplica las respuestas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="s-head"><div class="s-num">6</div><h2>Lo que recibe tu organización</h2></div>
+    <div class="s-body">
+      <div class="cards">
+        <div class="card"><div class="card-i">🏷️</div><div class="card-t">Logo en la landing</div><div class="card-b">El logo de tu organización en "Organizaciones que Acompañan" de loquelasmujeresnecesitan.org</div></div>
+        <div class="card"><div class="card-i">📈</div><div class="card-t">Reporte de tu comunidad</div><div class="card-b">Informe con los datos de las mujeres que respondieron desde tu link.</div></div>
+        <div class="card"><div class="card-i">🔑</div><div class="card-t">Acceso anticipado</div><div class="card-b">Informe nacional completo antes de la presentación pública.</div></div>
+        <div class="card"><div class="card-i">🤝</div><div class="card-t">Mención oficial</div><div class="card-b">Tu organización figura entre las aliadas en comunicados de prensa.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 7 FORMULARIO -->
+  <section id="s-form">
+    <div class="s-head"><div class="s-num">7</div><h2>Registrá tu organización</h2></div>
+    <div class="s-body">
+      <p>Completá el formulario para activar tu participación como Organización que Acompaña. Subí el logo y nos encargamos de publicarlo en la landing.</p>
+    </div>
+
+    <div class="form-section">
+      <div class="form-hero">
+        <h3>Sumá tu organización</h3>
+        <p>Toma menos de 2 minutos. Solo necesitamos los datos de la organización y el logo.</p>
+      </div>
+
+      <div class="form-body">
+        <form id="main-form" action="https://formspree.io/f/mzdlkjaj" method="POST" enctype="multipart/form-data" novalidate>
+
+          <div class="fsec-lbl">Datos de la organización</div>
+
+          <div class="fg">
+            <label>Nombre de la organización <span class="req">*</span></label>
+            <input type="text" name="organizacion" id="f-org" placeholder="Ej: Asociación Argentina de Salud Femenina" required>
+            <div class="ferr" id="e-org">Por favor ingresá el nombre de tu organización.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fg" style="margin-bottom:0">
+              <label>Tipo de organización <span class="req">*</span></label>
+              <select name="tipo" id="f-tipo" required>
+                <option value="">Seleccioná...</option>
+                <option>ONG / Sociedad civil</option>
+                <option>Clínica / Sanatorio</option>
+                <option>Cámara / Asociación profesional</option>
+                <option>Universidad / Instituto académico</option>
+                <option>Empresa</option>
+                <option>Sindicato / Gremio</option>
+                <option>Municipio / Organismo público</option>
+                <option>Otro</option>
+              </select>
+              <div class="ferr" id="e-tipo">Por favor seleccioná el tipo.</div>
+            </div>
+            <div class="fg" style="margin-bottom:0">
+              <label>Provincia <span class="req">*</span></label>
+              <select name="provincia" id="f-prov" required>
+                <option value="">Seleccioná...</option>
+                <option>Buenos Aires</option><option>CABA</option><option>Catamarca</option>
+                <option>Chaco</option><option>Chubut</option><option>Córdoba</option>
+                <option>Corrientes</option><option>Entre Ríos</option><option>Formosa</option>
+                <option>Jujuy</option><option>La Pampa</option><option>La Rioja</option>
+                <option>Mendoza</option><option>Misiones</option><option>Neuquén</option>
+                <option>Río Negro</option><option>Salta</option><option>San Juan</option>
+                <option>San Luis</option><option>Santa Cruz</option><option>Santa Fe</option>
+                <option>Santiago del Estero</option><option>Tierra del Fuego</option>
+                <option>Tucumán</option><option>Nacional (varias provincias)</option>
+              </select>
+              <div class="ferr" id="e-prov">Por favor seleccioná la provincia.</div>
+            </div>
+          </div>
+
+          <div class="fg" style="margin-top:18px">
+            <label>Sitio web <span class="opt">(opcional)</span></label>
+            <input type="url" name="web" placeholder="https://www.tuorganizacion.org.ar">
+          </div>
+
+          <div class="fdiv"></div>
+
+          <div class="fsec-lbl">Persona de contacto</div>
+
+          <div class="fr">
+            <div class="fg" style="margin-bottom:0">
+              <label>Nombre y apellido <span class="req">*</span></label>
+              <input type="text" name="nombre" id="f-nom" placeholder="Tu nombre completo" required>
+              <div class="ferr" id="e-nom">Por favor ingresá tu nombre.</div>
+            </div>
+            <div class="fg" style="margin-bottom:0">
+              <label>Cargo <span class="req">*</span></label>
+              <input type="text" name="cargo" id="f-cargo" placeholder="Ej: Directora, Coordinadora..." required>
+              <div class="ferr" id="e-cargo">Por favor ingresá tu cargo.</div>
+            </div>
+          </div>
+
+          <div class="fr" style="margin-top:16px">
+            <div class="fg" style="margin-bottom:0">
+              <label>Email institucional <span class="req">*</span></label>
+              <input type="email" name="email" id="f-email" placeholder="nombre@organizacion.org" required>
+              <div class="ferr" id="e-email">Por favor ingresá un email válido.</div>
+            </div>
+            <div class="fg" style="margin-bottom:0">
+              <label>WhatsApp <span class="opt">(opcional)</span></label>
+              <input type="text" name="whatsapp" placeholder="+54 9 11 ...">
+            </div>
+          </div>
+
+          <div class="fdiv"></div>
+
+          <div class="fsec-lbl">Logo de la organización</div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;font-weight:300">El logo aparecerá en <strong style="color:var(--navy)">"Organizaciones que Acompañan"</strong> de <span style="color:var(--orange)">loquelasmujeresnecesitan.org</span></p>
+
+          <div class="fg">
+            <label>Subí tu logo <span class="req">*</span></label>
+            <div class="upload-area" id="ua">
+              <input type="file" name="logo" id="logo-f" accept=".png,.jpg,.jpeg,.svg" required>
+              <div class="upload-icon">🖼️</div>
+              <div class="upload-t">Arrastrá tu logo acá o hacé clic para buscarlo</div>
+              <div class="upload-s">Formatos: <span>PNG, JPG, SVG</span> · fondo transparente preferible · mín. 300px</div>
+            </div>
+            <div id="prev-wrap">
+              <img id="prev-img" src="" alt="Vista previa del logo">
+              <div id="prev-name"></div>
+              <button id="rm-logo" type="button">Eliminar y subir otro</button>
+            </div>
+            <div class="ferr" id="e-logo">Por favor subí el logo de tu organización.</div>
+          </div>
+
+          <div class="fdiv"></div>
+
+          <div class="fsec-lbl">Compromisos de difusión</div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;font-weight:300">Al sumar tu organización, te comprometés a:</p>
+
+          <div class="cg">
+            <label class="ci">
+              <input type="checkbox" name="comp_difundir" value="si" checked>
+              <span class="ci-lbl"><strong>Difundir la consulta</strong> entre tu comunidad (newsletter, redes, WhatsApp, cartelería, etc.)</span>
+            </label>
+            <label class="ci">
+              <input type="checkbox" name="comp_logo" value="si" checked>
+              <span class="ci-lbl"><strong>Autorizar la publicación del logo</strong> de tu organización en la landing de la consulta</span>
+            </label>
+            <label class="ci">
+              <input type="checkbox" name="comp_presencial" value="si">
+              <span class="ci-lbl">Facilitar <strong>puntos de acceso presencial</strong> (tablet, QR en cartelería, etc.) <span style="color:var(--text-mid);font-size:11px">— opcional —</span></span>
+            </label>
+          </div>
+
+          <div class="fg" style="margin-top:20px">
+            <label>¿Querés contarnos algo más? <span class="opt">(opcional)</span></label>
+            <textarea name="mensaje" placeholder="Cómo pensás difundir la consulta, preguntas, etc." rows="3"></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="Nueva organización aliada — Lo que las Mujeres Necesitan">
+
+          <div class="sub-wrap">
+            <button type="submit" class="btn-sub" id="btn-sub">Registrar mi organización →</button>
+            <p class="sub-note">
+              Al enviar aceptás que el logo sea publicado en loquelasmujeresnecesitan.org<br>
+              como "Organización que Acompaña". No implica aval político ni financiero.
+            </p>
+          </div>
+        </form>
+
+        <div class="success-scr" id="success-scr">
+          <div class="success-icon">🎉</div>
+          <h3>¡Gracias por acompañar!</h3>
+          <p>Registramos a tu organización. En los próximos días el logo aparecerá en <strong>loquelasmujeresnecesitan.org</strong>. Te enviamos el kit de difusión por mail.</p>
+          <div class="success-box">
+            <p style="font-size:13px;color:var(--navy);font-weight:600;margin-bottom:6px">Consulta:</p>
+            <div class="su">loquelasmujeresnecesitan.org</div>
+            <p style="font-size:11px;color:var(--text-mid);margin-top:4px">#LoQueLasMujeresNecesitan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl" style="margin-top:22px">
+      <div class="hl-lbl">¿Necesitás ayuda?</div>
+      <p>Escribinos a <strong>consulta@wghargentina.org</strong> o al WhatsApp del equipo de coordinación.<br>Tenemos disponibles: QR descargable de tu link, guión de video y versiones adaptadas para distintos públicos.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><a href="/">loquelasmujeresnecesitan.org</a> · Women in Global Health Argentina · Consulta Nacional 2026 · <span>#LoQueLasMujeresNecesitan</span></p>
+</footer>
+
+<script>
+// Copiar texto
+function cp(btn, id) {
+  var el = document.getElementById(id);
+  var texto = el.innerText;
+  var done = function () {
+    var o = btn.textContent;
+    btn.textContent = '¡Copiado!';
+    btn.style.background = 'var(--orange)';
+    btn.style.color = 'white';
+    setTimeout(function () { btn.textContent = o; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto).then(done).catch(fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = texto; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+}
+
+// Preview del logo
+var logoF = document.getElementById('logo-f');
+var prevWrap = document.getElementById('prev-wrap');
+var prevImg = document.getElementById('prev-img');
+var prevName = document.getElementById('prev-name');
+var ua = document.getElementById('ua');
+
+function showPreview(file) {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    prevImg.src = e.target.result;
+    prevName.textContent = file.name;
+    prevWrap.style.display = 'block';
+    ua.querySelector('.upload-icon').style.display = 'none';
+    ua.querySelector('.upload-t').style.display = 'none';
+    ua.querySelector('.upload-s').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+logoF.addEventListener('change', function () { if (this.files[0]) showPreview(this.files[0]); });
+document.getElementById('rm-logo').addEventListener('click', function () {
+  logoF.value = '';
+  prevWrap.style.display = 'none';
+  prevImg.src = '';
+  ua.querySelector('.upload-icon').style.display = '';
+  ua.querySelector('.upload-t').style.display = '';
+  ua.querySelector('.upload-s').style.display = '';
+});
+ua.addEventListener('dragover', function (e) { e.preventDefault(); ua.classList.add('dragover'); });
+ua.addEventListener('dragleave', function () { ua.classList.remove('dragover'); });
+ua.addEventListener('drop', function (e) {
+  e.preventDefault(); ua.classList.remove('dragover');
+  if (e.dataTransfer.files[0]) { logoF.files = e.dataTransfer.files; showPreview(e.dataTransfer.files[0]); }
+});
+
+// Validación
+var valEmail = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+function se(fid, eid) { var el = document.getElementById(fid); if (el) el.classList.add('invalid'); document.getElementById(eid).style.display = 'block'; }
+function ce(fid, eid) { var el = document.getElementById(fid); if (el) el.classList.remove('invalid'); document.getElementById(eid).style.display = 'none'; }
+
+['f-org','f-tipo','f-prov','f-nom','f-cargo','f-email'].forEach(function (id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var eid = 'e-' + id.replace('f-', '');
+  el.addEventListener('input', function () { ce(id, eid); });
+  el.addEventListener('change', function () { ce(id, eid); });
+});
+
+document.getElementById('main-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var self = this;
+  var ok = true;
+
+  var checks = [
+    ['f-org','e-org', function (v) { return v.trim().length > 1; }],
+    ['f-tipo','e-tipo', function (v) { return v !== ''; }],
+    ['f-prov','e-prov', function (v) { return v !== ''; }],
+    ['f-nom','e-nom', function (v) { return v.trim().length > 1; }],
+    ['f-cargo','e-cargo', function (v) { return v.trim().length > 1; }],
+    ['f-email','e-email', function (v) { return valEmail(v); }]
+  ];
+  checks.forEach(function (c) {
+    var el = document.getElementById(c[0]);
+    var val = el ? el.value : '';
+    if (!c[2](val)) { se(c[0], c[1]); ok = false; } else { ce(c[0], c[1]); }
+  });
+  if (!logoF.files || !logoF.files[0]) { document.getElementById('e-logo').style.display = 'block'; ok = false; }
+  else { document.getElementById('e-logo').style.display = 'none'; }
+
+  if (!ok) {
+    var firstErr = document.querySelector('.ferr[style*="block"]');
+    if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  var btn = document.getElementById('btn-sub');
+  btn.disabled = true; btn.textContent = 'Enviando...';
+
+  var fd = new FormData(self);
+  fetch(self.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    .then(function (res) {
+      if (res.ok) {
+        self.style.display = 'none';
+        document.getElementById('success-scr').style.display = 'block';
+        document.getElementById('s-form').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        btn.disabled = false; btn.textContent = 'Registrar mi organización →';
+        alert('Hubo un error. Por favor escribinos a consulta@wghargentina.org');
+      }
+    })
+    .catch(function () {
+      btn.disabled = false; btn.textContent = 'Registrar mi organización →';
+      alert('Hubo un error de conexión. Por favor escribinos a consulta@wghargentina.org');
+    });
+});
+</script>
+</body>
+</html>

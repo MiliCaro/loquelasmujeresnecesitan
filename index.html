@@ -323,6 +323,12 @@
   .btn-toolkit:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.25); background: #fff; }
   .btn-toolkit .arrow { transition: transform 0.22s; }
   .btn-toolkit:hover .arrow { transform: translateX(4px); }
+  .btn-toolkit.secondary {
+    background: transparent; color: white;
+    border: 1.5px solid rgba(255,255,255,0.6); box-shadow: none;
+  }
+  .btn-toolkit.secondary:hover { background: rgba(255,255,255,0.12); border-color: white; }
+  .aliada-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
   .aliada-note {
     margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.7);
   }
@@ -1158,14 +1164,20 @@
     <div class="aliada-overline reveal">Sumate a la campaña</div>
     <h2 class="aliada-title reveal d1">Sé aliada de la consulta</h2>
     <p class="aliada-lead reveal d2">
-      Descargá el toolkit con placas para redes, textos listos para compartir y todo
-      lo que necesitás para difundir la consulta en tu comunidad. Cada voz suma.
+      Sumá tu voz para que esta consulta llegue a todo el país. Elegí cómo querés acompañar:
+      difundila en tus redes o registrá a tu organización.
     </p>
-    <a href="/toolkit/" class="btn-toolkit reveal d2">
-      Ver el toolkit
-      <span class="arrow">→</span>
-    </a>
-    <div class="aliada-note reveal d3">Materiales gratuitos · listos para usar</div>
+    <div class="aliada-actions reveal d2">
+      <a href="/toolkit/" class="btn-toolkit">
+        Toolkit para difundir
+        <span class="arrow">→</span>
+      </a>
+      <a href="/aliadas/" class="btn-toolkit secondary">
+        Sumá tu organización
+        <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="aliada-note reveal d3">Materiales gratuitos · placas, textos y checklist</div>
   </div>
 </section>
 

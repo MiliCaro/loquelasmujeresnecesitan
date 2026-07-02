@@ -106,27 +106,51 @@
     font-weight: 300; max-width: 620px; margin-bottom: 32px;
   }
 
-  /* PLACAS */
+  /* PLACAS DE MENSAJE (sin fotos) */
   .placas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .placa-card {
-    background: white; border-radius: 18px; overflow: hidden;
-    box-shadow: 0 6px 24px rgba(27,43,75,0.07);
-    display: flex; flex-direction: column;
-    transition: transform 0.22s, box-shadow 0.22s;
+  .placa-item { display: flex; flex-direction: column; gap: 12px; }
+  .placa {
+    aspect-ratio: 1 / 1; border-radius: 20px; padding: 32px 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+    box-shadow: 0 6px 24px rgba(27,43,75,0.09);
   }
-  .placa-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(27,43,75,0.13); }
-  .placa-img { aspect-ratio: 4/3; background: var(--cream-mid); overflow: hidden; }
-  .placa-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .placa-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
-  .placa-body h3 { font-size: 16px; font-weight: 700; }
-  .placa-body p { font-size: 13px; color: var(--text-mid); line-height: 1.5; flex: 1; }
+  .placa::before {
+    content: ''; position: absolute; width: 220px; height: 220px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); top: -70px; right: -70px; pointer-events: none;
+  }
+  .placa-orange { background: linear-gradient(150deg, var(--orange) 0%, var(--orange-dark) 100%); color: #fff; }
+  .placa-navy   { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 100%); color: #fff; }
+  .placa-cream  { background: var(--cream-mid); color: var(--navy); }
+  .placa-cream::before { background: rgba(224,90,43,0.09); }
+  .placa-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+    font-size: 13px; position: relative; z-index: 2;
+  }
+  .placa-badge .dot { width: 22px; height: 22px; border-radius: 6px 6px 6px 0; background: var(--orange); flex-shrink: 0; }
+  .placa-cream .placa-badge .dot { background: var(--orange); }
+  .placa-orange .placa-badge .dot, .placa-navy .placa-badge .dot { background: rgba(255,255,255,0.9); }
+  .placa-msg {
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: clamp(21px, 2.3vw, 29px); line-height: 1.12; letter-spacing: -0.01em;
+    position: relative; z-index: 2;
+  }
+  .placa-msg .em { font-style: italic; }
+  .placa-orange .placa-msg .em, .placa-navy .placa-msg .em { color: rgba(255,255,255,0.75); }
+  .placa-cream .placa-msg .em { color: var(--orange); }
+  .placa-foot { position: relative; z-index: 2; }
+  .placa-foot .url { font-size: 12.5px; font-weight: 700; }
+  .placa-foot .tag { font-size: 11px; opacity: 0.72; margin-top: 3px; }
   .placa-dl {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    background: var(--navy); color: white; text-decoration: none;
+    background: var(--navy); color: white; border: none; cursor: pointer;
+    text-decoration: none; font-family: inherit;
     padding: 11px 18px; border-radius: 100px; font-weight: 600; font-size: 14px;
     transition: background 0.2s;
   }
   .placa-dl:hover { background: var(--navy-mid); }
+  .placa-dl:disabled { opacity: 0.6; cursor: wait; }
 
   /* TEXTOS */
   .textos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
@@ -220,32 +244,45 @@
 <section class="tk-section">
   <div class="tk-step">1</div>
   <h2>Placas para redes</h2>
-  <p class="lead">Descargalas y compartilas en Instagram, WhatsApp, Facebook o donde quieras. Todas en alta calidad.</p>
+  <p class="lead">Placas de mensaje, sin fotos, listas para invitar a responder. Descargalas en alta calidad y compartilas en Instagram, WhatsApp, Facebook o donde quieras.</p>
   <div class="placas-grid">
-    <div class="placa-card">
-      <div class="placa-img"><img src="../OG-Card-Final.png" alt="Placa principal de la consulta" loading="lazy"></div>
-      <div class="placa-body">
-        <h3>Placa principal</h3>
-        <p>La imagen de la campaña. Ideal para posteo de feed y para compartir por WhatsApp.</p>
-        <a class="placa-dl" href="../OG-Card-Final.png" download>⬇ Descargar</a>
+
+    <div class="placa-item">
+      <div class="placa placa-orange">
+        <div class="placa-badge"><span class="dot"></span>Lo que las Mujeres Necesitan</div>
+        <div class="placa-msg">¿Qué necesitás para <span class="em">cuidar tu salud</span>?</div>
+        <div class="placa-foot">
+          <div class="url">loquelasmujeresnecesitan.org</div>
+          <div class="tag">Consulta Nacional 2026 · 3 minutos · anónima</div>
+        </div>
       </div>
+      <button class="placa-dl" type="button" onclick="descargarPlaca(this)">⬇ Descargar placa</button>
     </div>
-    <div class="placa-card">
-      <div class="placa-img"><img src="../hero-mujeres.jpg" alt="Mujeres de distintas edades" loading="lazy"></div>
-      <div class="placa-body">
-        <h3>Foto de campaña</h3>
-        <p>Mujeres de todas las edades. Para historias, portadas o piezas propias.</p>
-        <a class="placa-dl" href="../hero-mujeres.jpg" download>⬇ Descargar</a>
+
+    <div class="placa-item">
+      <div class="placa placa-navy">
+        <div class="placa-badge"><span class="dot"></span>Lo que las Mujeres Necesitan</div>
+        <div class="placa-msg">Tu voz <span class="em">construye la evidencia</span> que cambia políticas de salud.</div>
+        <div class="placa-foot">
+          <div class="url">loquelasmujeresnecesitan.org</div>
+          <div class="tag">Respondé y compartí · #LoQueLasMujeresNecesitan</div>
+        </div>
       </div>
+      <button class="placa-dl" type="button" onclick="descargarPlaca(this)">⬇ Descargar placa</button>
     </div>
-    <div class="placa-card">
-      <div class="placa-img"><img src="../Imagen_mujeres.png" alt="Ilustración de mujeres" loading="lazy" onerror="this.closest('.placa-card').style.display='none'"></div>
-      <div class="placa-body">
-        <h3>Pieza adicional</h3>
-        <p>Recurso extra para variar tus publicaciones durante la campaña.</p>
-        <a class="placa-dl" href="../Imagen_mujeres.png" download>⬇ Descargar</a>
+
+    <div class="placa-item">
+      <div class="placa placa-cream">
+        <div class="placa-badge"><span class="dot"></span>Lo que las Mujeres Necesitan</div>
+        <div class="placa-msg">No importa dónde vivís ni cuántos años tenés: <span class="em">tu experiencia importa</span>.</div>
+        <div class="placa-foot">
+          <div class="url">loquelasmujeresnecesitan.org</div>
+          <div class="tag">Sumá tu voz a la consulta nacional</div>
+        </div>
       </div>
+      <button class="placa-dl" type="button" onclick="descargarPlaca(this)">⬇ Descargar placa</button>
     </div>
+
   </div>
 </section>
 
@@ -327,7 +364,29 @@ Una iniciativa que escucha las voces de las mujeres de todo el país para constr
   <p>Women in Global Health Argentina · <a href="/">loquelasmujeresnecesitan.org</a></p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
+  // Descargar placa como PNG
+  function descargarPlaca(btn) {
+    var placa = btn.closest('.placa-item').querySelector('.placa');
+    if (typeof html2canvas !== 'function') {
+      alert('No se pudo cargar el generador de imagen. Probá recargar la página.');
+      return;
+    }
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Generando…';
+    html2canvas(placa, { scale: 3, backgroundColor: null, logging: false }).then(function (canvas) {
+      var a = document.createElement('a');
+      a.download = 'placa-consulta.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+      btn.disabled = false; btn.textContent = original;
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = original;
+      alert('No se pudo generar la imagen. Probá de nuevo.');
+    });
+  }
+
   document.querySelectorAll('.btn-copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var texto = btn.closest('.texto-card').querySelector('.texto-body').innerText.trim();
