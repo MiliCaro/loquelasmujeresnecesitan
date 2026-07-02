@@ -97,7 +97,7 @@
   }
   .nav-brand span { display: block; }
   .nav-wgh-logo { height: 34px; width: auto; display: block; }
-  .nav-brand-sub { display: none; } /* el logo WGH reemplaza al texto en el nav */
+  .nav-brand-sub { display: none !important; } /* el logo WGH reemplaza al texto en el nav */
   .nav-cta {
     background: var(--orange); color: white;
     border: none; cursor: pointer;
@@ -115,7 +115,7 @@
     min-height: 100vh;
     background: var(--cream);
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     padding-top: 68px;
     overflow: hidden;
   }
@@ -123,7 +123,7 @@
   .hero-left {
     padding: 56px 48px 56px 72px;
     display: flex; flex-direction: column; justify-content: center;
-    max-width: 680px;
+    max-width: 680px; min-width: 0;
   }
 
   .bubble-logo { width: 180px; margin-bottom: 16px; }
@@ -171,6 +171,7 @@
     font-size: clamp(34px, 3.8vw, 56px);
     font-weight: 900; line-height: 1.08;
     color: var(--navy); letter-spacing: -0.02em;
+    overflow-wrap: break-word; word-break: break-word;
   }
   .hero-heading .accent { color: var(--orange); font-style: italic; display: block; }
 
@@ -216,7 +217,7 @@
 
   /* ── CONTADOR DE RESPUESTAS (editar data-current / data-goal en el HTML) ── */
   .hero-counter { margin-top: 30px; max-width: 440px; }
-  .hc-row { display: flex; align-items: baseline; gap: 9px; }
+  .hc-row { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
   .hc-num {
     font-family: 'Playfair Display', serif; font-weight: 900;
     font-size: 40px; line-height: 1; color: var(--orange);
@@ -234,9 +235,9 @@
   }
   .hc-pct { font-size: 13px; font-weight: 700; color: var(--orange); }
 
-  .hero-right { position: relative; overflow: hidden; min-height: 500px; max-width: 420px; margin-left: auto; }
-  .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 20%); }
+  .hero-right { position: relative; align-self: end; max-width: 760px; margin-left: auto; width: 100%; min-width: 0; }
+  .hero-right img { width: 100%; max-width: 100%; height: auto; display: block; object-fit: contain; }
+  .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 22%); pointer-events: none; }
 
   /* ── ABOUT SECTION ── */
   .about-section {
@@ -633,9 +634,9 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 52px 28px; }
+    .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; }
+    .hero-right { max-width: 520px; margin: 0 auto; align-self: center; }
+    .hero-left { padding: 52px 28px 32px; }
     .about-section, .cinco-section, .disenado-section, .process-section,
     .testimonios-section, .red-section, .sponsors-section,
     .timeline-section { padding: 64px 28px; }
@@ -652,8 +653,12 @@
     .footer-inner { flex-direction: column; gap: 28px; }
   }
   @media (max-width: 600px) {
-    .hero-heading { font-size: 32px; }
-    .hero-actions { flex-direction: column; }
+    nav { padding: 0 16px; }
+    .nav-wgh-logo { height: 26px; }
+    .nav-cta { padding: 10px 18px; font-size: 13px; }
+    .hero-heading { font-size: 27px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn-primary { width: 100%; }
     .timeline-items { grid-template-columns: 1fr; }
     .sponsors-footer { flex-direction: column; align-items: flex-start; }
     .share-btns { flex-direction: column; align-items: center; }
