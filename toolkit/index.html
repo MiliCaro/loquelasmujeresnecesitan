@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toolkit · Lo que las Mujeres Necesitan | Consulta Nacional 2026</title>
+
+<meta name="description" content="Toolkit de difusión de la Consulta Nacional: placas para redes, textos listos para compartir y todo lo que necesitás para sumar más voces.">
+<meta name="theme-color" content="#E05A2B">
+<link rel="canonical" href="https://loquelasmujeresnecesitan.org/toolkit/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E05A2B'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Lo que las Mujeres Necesitan · WGH Argentina">
+<meta property="og:title" content="Toolkit de difusión — Consulta Nacional 2026">
+<meta property="og:description" content="Placas para redes, textos listos para compartir y materiales gratuitos para difundir la consulta.">
+<meta property="og:url" content="https://loquelasmujeresnecesitan.org/toolkit/">
+<meta property="og:image" content="https://loquelasmujeresnecesitan.org/OG-Card-Final.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:    #F2EDE4;
+    --cream-mid:#EAE3D8;
+    --orange:   #E05A2B;
+    --orange-dark: #C44D22;
+    --orange-light: #F4896A;
+    --navy:     #1B2B4B;
+    --navy-mid: #2C3E6B;
+    --text-mid:  #4A5568;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--cream); color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 68px;
+    background: rgba(242,237,228,0.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(27,43,75,0.08);
+  }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--navy); text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--orange); }
+  .nav-back .arrow { transition: transform 0.2s; }
+  .nav-back:hover .arrow { transform: translateX(-3px); }
+  .nav-cta {
+    background: var(--orange); color: white; text-decoration: none;
+    padding: 12px 24px; border-radius: 100px; font-weight: 700; font-size: 14px;
+    transition: all 0.22s; box-shadow: 0 4px 16px rgba(224,90,43,0.3);
+  }
+  .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+  /* HERO */
+  .tk-hero {
+    padding: 80px 40px 64px; text-align: center;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-mid) 100%);
+  }
+  .tk-overline {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--orange); font-weight: 700; margin-bottom: 16px;
+  }
+  .tk-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4.5vw, 60px); font-weight: 900;
+    line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 20px;
+  }
+  .tk-hero h1 .accent { color: var(--orange); font-style: italic; }
+  .tk-hero p {
+    font-size: 18px; line-height: 1.7; color: var(--text-mid);
+    font-weight: 300; max-width: 640px; margin: 0 auto;
+  }
+
+  /* SECTIONS */
+  .tk-section { padding: 64px 40px; max-width: 1080px; margin: 0 auto; }
+  .tk-section + .tk-section { padding-top: 24px; }
+  .tk-step {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--orange); color: white; font-weight: 700; font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .tk-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 40px); font-weight: 900;
+    line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 12px;
+  }
+  .tk-section > p.lead {
+    font-size: 16px; line-height: 1.7; color: var(--text-mid);
+    font-weight: 300; max-width: 620px; margin-bottom: 32px;
+  }
+
+  /* PLACAS */
+  .placas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .placa-card {
+    background: white; border-radius: 18px; overflow: hidden;
+    box-shadow: 0 6px 24px rgba(27,43,75,0.07);
+    display: flex; flex-direction: column;
+    transition: transform 0.22s, box-shadow 0.22s;
+  }
+  .placa-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(27,43,75,0.13); }
+  .placa-img { aspect-ratio: 4/3; background: var(--cream-mid); overflow: hidden; }
+  .placa-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .placa-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .placa-body h3 { font-size: 16px; font-weight: 700; }
+  .placa-body p { font-size: 13px; color: var(--text-mid); line-height: 1.5; flex: 1; }
+  .placa-dl {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--navy); color: white; text-decoration: none;
+    padding: 11px 18px; border-radius: 100px; font-weight: 600; font-size: 14px;
+    transition: background 0.2s;
+  }
+  .placa-dl:hover { background: var(--navy-mid); }
+
+  /* TEXTOS */
+  .textos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .texto-card {
+    background: white; border-radius: 18px; padding: 26px;
+    box-shadow: 0 6px 24px rgba(27,43,75,0.07);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .texto-head { display: flex; align-items: center; gap: 10px; }
+  .texto-head .ico { font-size: 20px; }
+  .texto-head h3 { font-size: 16px; font-weight: 700; }
+  .texto-body {
+    font-size: 15px; line-height: 1.65; color: var(--navy);
+    background: var(--cream); border-radius: 12px; padding: 18px; flex: 1;
+    white-space: pre-line;
+  }
+  .btn-copy {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange); color: white; border: none; cursor: pointer;
+    padding: 11px 22px; border-radius: 100px; font-family: inherit;
+    font-weight: 700; font-size: 14px; transition: all 0.2s;
+  }
+  .btn-copy:hover { background: var(--orange-dark); }
+  .btn-copy.copied { background: #2E7D4F; }
+
+  /* COMPARTIR */
+  .share-band {
+    background: var(--navy); border-radius: 22px; padding: 48px 40px; text-align: center;
+    max-width: 1080px; margin: 0 auto;
+  }
+  .share-band h2 { color: white; font-family: 'Playfair Display', serif; font-size: clamp(24px,2.6vw,34px); font-weight: 900; margin-bottom: 10px; }
+  .share-band p { color: rgba(255,255,255,0.75); font-weight: 300; margin-bottom: 28px; }
+  .share-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .share-btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 14px 28px; border-radius: 100px; text-decoration: none;
+    font-weight: 700; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .share-btn svg { width: 20px; height: 20px; }
+  .share-btn:hover { transform: translateY(-2px); }
+  .share-wa { background: #25D366; color: white; }
+  .share-x { background: #fff; color: #000; }
+
+  /* CTA FINAL */
+  .tk-final { padding: 80px 40px 96px; text-align: center; }
+  .tk-final h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px,3vw,40px); font-weight: 900; margin-bottom: 18px; }
+  .tk-final .accent { color: var(--orange); font-style: italic; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--orange); color: white; text-decoration: none;
+    padding: 18px 44px; border-radius: 100px; font-weight: 700; font-size: 16px;
+    box-shadow: 0 8px 28px rgba(224,90,43,0.4); transition: all 0.22s;
+  }
+  .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(224,90,43,0.5); }
+
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.6);
+    text-align: center; padding: 36px 24px; font-size: 13px;
+  }
+  footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media (max-width: 860px) {
+    .placas-grid { grid-template-columns: 1fr 1fr; }
+    .textos-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    nav { padding: 0 18px; }
+    .nav-back span.txt { display: none; }
+    .tk-hero, .tk-section, .tk-final { padding-left: 22px; padding-right: 22px; }
+    .placas-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="/"><span class="arrow">←</span><span class="txt">Volver a la consulta</span></a>
+  <a class="nav-cta" href="https://es.surveymonkey.com/r/JTRNWKQ" target="_blank" rel="noopener">Respondé ahora</a>
+</nav>
+
+<!-- HERO -->
+<header class="tk-hero">
+  <div class="tk-overline">Toolkit de difusión</div>
+  <h1>Sumá más voces a la <span class="accent">consulta</span></h1>
+  <p>Todo lo que necesitás para difundir la Consulta Nacional en tus redes y tu comunidad: placas listas para descargar, textos para copiar y pegar, y botones para compartir en un clic.</p>
+</header>
+
+<!-- 1. PLACAS -->
+<section class="tk-section">
+  <div class="tk-step">1</div>
+  <h2>Placas para redes</h2>
+  <p class="lead">Descargalas y compartilas en Instagram, WhatsApp, Facebook o donde quieras. Todas en alta calidad.</p>
+  <div class="placas-grid">
+    <div class="placa-card">
+      <div class="placa-img"><img src="../OG-Card-Final.png" alt="Placa principal de la consulta" loading="lazy"></div>
+      <div class="placa-body">
+        <h3>Placa principal</h3>
+        <p>La imagen de la campaña. Ideal para posteo de feed y para compartir por WhatsApp.</p>
+        <a class="placa-dl" href="../OG-Card-Final.png" download>⬇ Descargar</a>
+      </div>
+    </div>
+    <div class="placa-card">
+      <div class="placa-img"><img src="../hero-mujeres.jpg" alt="Mujeres de distintas edades" loading="lazy"></div>
+      <div class="placa-body">
+        <h3>Foto de campaña</h3>
+        <p>Mujeres de todas las edades. Para historias, portadas o piezas propias.</p>
+        <a class="placa-dl" href="../hero-mujeres.jpg" download>⬇ Descargar</a>
+      </div>
+    </div>
+    <div class="placa-card">
+      <div class="placa-img"><img src="../Imagen_mujeres.png" alt="Ilustración de mujeres" loading="lazy" onerror="this.closest('.placa-card').style.display='none'"></div>
+      <div class="placa-body">
+        <h3>Pieza adicional</h3>
+        <p>Recurso extra para variar tus publicaciones durante la campaña.</p>
+        <a class="placa-dl" href="../Imagen_mujeres.png" download>⬇ Descargar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TEXTOS -->
+<section class="tk-section">
+  <div class="tk-step">2</div>
+  <h2>Textos listos para compartir</h2>
+  <p class="lead">Copiá el que más te sirva y pegalo en tus redes o mensajes. Ya incluyen el link a la consulta.</p>
+  <div class="textos-grid">
+    <div class="texto-card">
+      <div class="texto-head"><span class="ico">💬</span><h3>Para WhatsApp</h3></div>
+      <div class="texto-body">💚 ¿Qué necesitás para cuidar tu salud?
+
+Estoy compartiendo la Consulta Nacional "Lo que las Mujeres Necesitan". Es anónima, confidencial y se responde en 3 minutos. Tu voz construye evidencia para mejorar la salud de las mujeres en Argentina.
+
+Respondé y compartí 👉 https://loquelasmujeresnecesitan.org</div>
+      <button class="btn-copy" type="button">📋 Copiar texto</button>
+    </div>
+    <div class="texto-card">
+      <div class="texto-head"><span class="ico">📸</span><h3>Para Instagram / Facebook</h3></div>
+      <div class="texto-body">No importa dónde vivís ni cuántos años tenés: tu experiencia importa. 💛
+
+Sumate a la Consulta Nacional "Lo que las Mujeres Necesitan", la primera que escucha en todo el país qué necesitan las mujeres para cuidar su salud. Anónima, confidencial y en solo 3 minutos.
+
+🔗 Link en bio / historias
+#LoQueLasMujeresNecesitan #WGHArgentina</div>
+      <button class="btn-copy" type="button">📋 Copiar texto</button>
+    </div>
+    <div class="texto-card">
+      <div class="texto-head"><span class="ico">✉️</span><h3>Para mail o newsletter</h3></div>
+      <div class="texto-body">Hola:
+
+Te invitamos a sumarte a la Consulta Nacional "Lo que las Mujeres Necesitan", impulsada por Women in Global Health Argentina. Es la primera consulta que releva, en todo el país, qué necesitan las mujeres para cuidar su salud.
+
+Es anónima, confidencial y lleva 3 minutos. Los resultados construirán evidencia para la política pública.
+
+Respondé acá: https://loquelasmujeresnecesitan.org</div>
+      <button class="btn-copy" type="button">📋 Copiar texto</button>
+    </div>
+    <div class="texto-card">
+      <div class="texto-head"><span class="ico">🏢</span><h3>Para organizaciones</h3></div>
+      <div class="texto-body">Nuestra organización acompaña la Consulta Nacional "Lo que las Mujeres Necesitan" de @WGHArgentina. 🤝
+
+Una iniciativa que escucha las voces de las mujeres de todo el país para construir evidencia sobre su salud. Los invitamos a responder y difundir.
+
+👉 https://loquelasmujeresnecesitan.org</div>
+      <button class="btn-copy" type="button">📋 Copiar texto</button>
+    </div>
+  </div>
+</section>
+
+<!-- 3. COMPARTIR EN UN CLIC -->
+<section class="tk-section">
+  <div class="share-band">
+    <h2>Compartí en un clic</h2>
+    <p>Sin descargar nada: publicá la consulta directo desde acá.</p>
+    <div class="share-btns">
+      <a class="share-btn share-wa" target="_blank" rel="noopener"
+         href="https://wa.me/?text=%F0%9F%92%9A%20Respond%C3%A9%20esta%20consulta%20nacional%20sobre%20salud%20de%20las%20mujeres%20en%20Argentina%20https%3A%2F%2Floquelasmujeresnecesitan.org">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a class="share-btn share-x" target="_blank" rel="noopener"
+         href="https://twitter.com/intent/tweet?text=Respond%C3%A9%20esta%20consulta%20nacional%20sobre%20salud%20de%20las%20mujeres%20en%20Argentina%20%23LoQueLasMujeresNecesitan&url=https%3A%2F%2Floquelasmujeresnecesitan.org">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632L18.245 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X (Twitter)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="tk-final">
+  <h2>¿Todavía no la <span class="accent">respondiste</span>?</h2>
+  <a class="btn-primary" href="https://es.surveymonkey.com/r/JTRNWKQ" target="_blank" rel="noopener">¡Respondé la encuesta! →</a>
+</section>
+
+<footer>
+  <p>Women in Global Health Argentina · <a href="/">loquelasmujeresnecesitan.org</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.btn-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var texto = btn.closest('.texto-card').querySelector('.texto-body').innerText.trim();
+      var done = function () {
+        btn.textContent = '✓ ¡Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = '📋 Copiar texto'; btn.classList.remove('copied'); }, 2200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(done).catch(fallback);
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = texto; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>
