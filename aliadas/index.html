@@ -475,7 +475,7 @@ Acompañada por [Nombre de tu organización]</div>
       </div>
 
       <div class="form-body">
-        <form id="main-form" action="https://formspree.io/f/mzdlkjaj" method="POST" enctype="multipart/form-data" novalidate>
+        <form id="main-form" action="https://formspree.io/f/mzdlkjaj" method="POST" novalidate>
 
           <div class="fsec-lbl">Datos de la organización</div>
 
@@ -564,14 +564,14 @@ Acompañada por [Nombre de tu organización]</div>
               <input type="file" name="logo" id="logo-f" accept=".png,.jpg,.jpeg,.svg" required>
               <div class="upload-icon">🖼️</div>
               <div class="upload-t">Arrastrá tu logo acá o hacé clic para buscarlo</div>
-              <div class="upload-s">Formatos: <span>PNG, JPG, SVG</span> · fondo transparente preferible · mín. 300px</div>
+              <div class="upload-s">Formatos: <span>PNG, JPG, SVG</span> · fondo transparente preferible · máx. 3 MB</div>
             </div>
             <div id="prev-wrap">
               <img id="prev-img" src="" alt="Vista previa del logo">
               <div id="prev-name"></div>
               <button id="rm-logo" type="button">Eliminar y subir otro</button>
             </div>
-            <div class="ferr" id="e-logo">Por favor subí el logo de tu organización.</div>
+            <div class="ferr" id="e-logo">Por favor subí el logo de tu organización (máx. 3 MB).</div>
           </div>
 
           <div class="fdiv"></div>
@@ -658,12 +658,16 @@ function cp(btn, id) {
   }
 }
 
+// ===== Endpoint del Google Apps Script (pegar la URL /exec del deploy) =====
+var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxy-2yDdPNbUpg0mtqSw8YyxNttXDWIP0NdaytXXbdnWCPj8O_CcfDU6vwApvqluDpJ/exec';
+
 // Preview del logo
 var logoF = document.getElementById('logo-f');
 var prevWrap = document.getElementById('prev-wrap');
 var prevImg = document.getElementById('prev-img');
 var prevName = document.getElementById('prev-name');
 var ua = document.getElementById('ua');
+var MAX_LOGO = 3 * 1024 * 1024; // 3 MB
 
 function showPreview(file) {
   var reader = new FileReader();
@@ -725,8 +729,18 @@ document.getElementById('main-form').addEventListener('submit', function (e) {
     var val = el ? el.value : '';
     if (!c[2](val)) { se(c[0], c[1]); ok = false; } else { ce(c[0], c[1]); }
   });
-  if (!logoF.files || !logoF.files[0]) { document.getElementById('e-logo').style.display = 'block'; ok = false; }
-  else { document.getElementById('e-logo').style.display = 'none'; }
+
+  var logoErr = document.getElementById('e-logo');
+  var file = logoF.files && logoF.files[0];
+  if (!file) {
+    logoErr.textContent = 'Por favor subí el logo de tu organización.';
+    logoErr.style.display = 'block'; ok = false;
+  } else if (file.size > MAX_LOGO) {
+    logoErr.textContent = 'El logo supera los 3 MB. Subí una versión más liviana.';
+    logoErr.style.display = 'block'; ok = false;
+  } else {
+    logoErr.style.display = 'none';
+  }
 
   if (!ok) {
     var firstErr = document.querySelector('.ferr[style*="block"]');
@@ -737,22 +751,53 @@ document.getElementById('main-form').addEventListener('submit', function (e) {
   var btn = document.getElementById('btn-sub');
   btn.disabled = true; btn.textContent = 'Enviando...';
 
-  var fd = new FormData(self);
-  fetch(self.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-    .then(function (res) {
-      if (res.ok) {
+  var val = function (n) { var el = self.elements[n]; return el ? el.value : ''; };
+  var chk = function (n) { var el = self.elements[n]; return (el && el.checked) ? 'Sí' : 'No'; };
+
+  var reader = new FileReader();
+  reader.onload = function (ev) {
+    var dataUrl = ev.target.result;              // data:<mime>;base64,XXXX
+    var b64 = dataUrl.substring(dataUrl.indexOf(',') + 1);
+
+    var payload = {
+      organizacion: val('organizacion'),
+      tipo: val('tipo'),
+      provincia: val('provincia'),
+      web: val('web'),
+      nombre: val('nombre'),
+      cargo: val('cargo'),
+      email: val('email'),
+      whatsapp: val('whatsapp'),
+      comp_difundir: chk('comp_difundir'),
+      comp_logo: chk('comp_logo'),
+      comp_presencial: chk('comp_presencial'),
+      mensaje: val('mensaje'),
+      logo_name: file.name,
+      logo_mime: file.type || 'application/octet-stream',
+      logo_b64: b64
+    };
+
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(function () {
         self.style.display = 'none';
         document.getElementById('success-scr').style.display = 'block';
         document.getElementById('s-form').scrollIntoView({ behavior: 'smooth' });
-      } else {
+      })
+      .catch(function () {
         btn.disabled = false; btn.textContent = 'Registrar mi organización →';
-        alert('Hubo un error. Por favor escribinos a consulta@wghargentina.org');
-      }
-    })
-    .catch(function () {
-      btn.disabled = false; btn.textContent = 'Registrar mi organización →';
-      alert('Hubo un error de conexión. Por favor escribinos a consulta@wghargentina.org');
-    });
+        alert('Hubo un error de conexión. Por favor escribinos a consulta@wghargentina.org');
+      });
+  };
+  reader.onerror = function () {
+    btn.disabled = false; btn.textContent = 'Registrar mi organización →';
+    alert('No pudimos leer el archivo del logo. Probá con otro archivo o escribinos a consulta@wghargentina.org');
+  };
+  reader.readAsDataURL(file);
 });
 </script>
 </body>
