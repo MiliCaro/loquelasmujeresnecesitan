@@ -1212,57 +1212,34 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* ── Contador de respuestas ── */
+  /* ── Contador de respuestas (editar data-current en el HTML) ── */
   (function(){
     const c = document.querySelector('.hero-counter');
     if(!c) return;
-    // Endpoint del Apps Script que devuelve el total real de SurveyMonkey
-    const COUNT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxy-2yDdPNbUpg0mtqSw8YyxNttXDWIP0NdaytXXbdnWCPj8O_CcfDU6vwApvqluDpJ/exec';
-    const goal = +c.dataset.goal;
+    const cur = +c.dataset.current, goal = +c.dataset.goal;
+    const pct = Math.min(100, Math.round(cur / goal * 100));
     const fmt = n => n.toLocaleString('es-AR');
     const numEl = document.getElementById('hcNum');
     const barEl = document.getElementById('hcBar');
     const pctEl = document.getElementById('hcPct');
     const goalEl = document.getElementById('hcGoal');
     if(goalEl) goalEl.textContent = fmt(goal);
+    pctEl.textContent = pct;
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    let shown = 0;
-    function render(target){
-      target = Math.max(0, Math.round(target));
-      const pct = Math.min(100, Math.round(target / goal * 100));
-      pctEl.textContent = pct;
-      if(reduce){
-        numEl.textContent = fmt(target);
-        barEl.style.width = pct + '%';
-        shown = target;
-        return;
-      }
-      const from = shown, dur = 1200, t0 = performance.now();
-      function tick(t){
-        const k = Math.min(1, (t - t0) / dur);
-        const e = 1 - Math.pow(1 - k, 3);
-        numEl.textContent = fmt(Math.round(from + (target - from) * e));
-        if(k < 1) requestAnimationFrame(tick); else shown = target;
-      }
-      requestAnimationFrame(tick);
-      setTimeout(() => { barEl.style.width = pct + '%'; }, 250);
+    if(reduce){
+      numEl.textContent = fmt(cur);
+      barEl.style.width = pct + '%';
+      return;
     }
-
-    // 1) Render inmediato con el número fijo del HTML (respaldo)
-    render(+c.dataset.current || 0);
-
-    // 2) Traer el total real de SurveyMonkey (JSONP) y re-renderizar si llega
-    window.__smCount = function(res){
-      if(res && res.ok && typeof res.count === 'number' && res.count > 0){
-        c.dataset.current = res.count;
-        render(res.count);
-      }
-    };
-    const s = document.createElement('script');
-    s.src = COUNT_ENDPOINT + '?action=count&callback=__smCount';
-    s.onerror = function(){ /* si falla, queda el número de respaldo */ };
-    document.body.appendChild(s);
+    const dur = 1200, t0 = performance.now();
+    function tick(t){
+      const k = Math.min(1, (t - t0) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      numEl.textContent = fmt(Math.round(cur * e));
+      if(k < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    setTimeout(() => { barEl.style.width = pct + '%'; }, 250);
   })();
 </script>
 

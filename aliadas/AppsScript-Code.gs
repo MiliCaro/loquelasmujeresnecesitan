@@ -66,67 +66,8 @@ function doPost(e) {
   }
 }
 
-function doGet(e) {
-  var params = (e && e.parameter) ? e.parameter : {};
-
-  // Contador de respuestas de SurveyMonkey (para el sitio)
-  if (params.action === 'count') {
-    var count = getStoredCount_();
-    var out = JSON.stringify({ ok: true, count: count });
-    if (params.callback) {
-      // JSONP: permite que el navegador lea la respuesta desde otro dominio
-      return ContentService
-        .createTextOutput(params.callback + '(' + out + ')')
-        .setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-    return ContentService.createTextOutput(out).setMimeType(ContentService.MimeType.JSON);
-  }
-
+function doGet() {
   return json_({ ok: true, msg: 'Endpoint activo' });
-}
-
-// ===== Contador SurveyMonkey =====
-// Configurar en Configuración del proyecto → Propiedades del script:
-//   SM_TOKEN      = token de acceso de SurveyMonkey
-//   SM_SURVEY_ID  = id numérico de la encuesta (usar listSurveys() para verlo)
-// Y crear un activador (trigger) horario que ejecute refreshResponseCount.
-
-function refreshResponseCount() {
-  var props = PropertiesService.getScriptProperties();
-  var token = props.getProperty('SM_TOKEN');
-  var surveyId = props.getProperty('SM_SURVEY_ID');
-  if (!token || !surveyId) return;
-
-  var res = UrlFetchApp.fetch('https://api.surveymonkey.com/v3/surveys/' + surveyId, {
-    method: 'get',
-    headers: { Authorization: 'Bearer ' + token, Accept: 'application/json' },
-    muteHttpExceptions: true
-  });
-  if (res.getResponseCode() !== 200) return;
-
-  var data = JSON.parse(res.getContentText());
-  if (data && typeof data.response_count === 'number') {
-    props.setProperty('SM_COUNT', String(data.response_count));
-  }
-}
-
-function getStoredCount_() {
-  var v = PropertiesService.getScriptProperties().getProperty('SM_COUNT');
-  return v ? parseInt(v, 10) : null;
-}
-
-// Ejecutar una vez desde el editor para ver el id de cada encuesta en los registros.
-function listSurveys() {
-  var token = PropertiesService.getScriptProperties().getProperty('SM_TOKEN');
-  var res = UrlFetchApp.fetch('https://api.surveymonkey.com/v3/surveys?per_page=50', {
-    method: 'get',
-    headers: { Authorization: 'Bearer ' + token, Accept: 'application/json' },
-    muteHttpExceptions: true
-  });
-  var data = JSON.parse(res.getContentText());
-  (data.data || []).forEach(function (s) {
-    Logger.log(s.id + '  →  ' + s.title);
-  });
 }
 
 // Evita que Sheets interprete valores como fórmulas (ej: WhatsApp que empieza con "+")
